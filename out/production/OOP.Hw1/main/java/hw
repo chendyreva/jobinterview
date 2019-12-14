@@ -1,0 +1,14 @@
+1)Создать builder для класса Person со следующими полями:
+ 1 String firstName,
+  2 String lastName,
+   3 String middleName,
+  4 String country,
+   5 String address,
+    6 String phone,
+     7 int age,
+  8 String gender.
+
+  2)Написать пример кода,
+   который реализует принцип полиморфизма,
+    на примере фигур
+     — круг, квадрат, треугольник.
