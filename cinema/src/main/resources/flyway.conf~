@@ -1,0 +1,4 @@
+flyway.url=jdbc:postgresql://localhost:5433/postgres?currentSchema=forum_java
+flyway.schemas=forum_java
+flyway.user=postgres
+flyway.password=123123
