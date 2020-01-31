@@ -18,23 +18,23 @@
       <ObjectId>13318</ObjectId>
       <Comment>default administrative connection database</Comment>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>751</IntrospectionStateNumber>
+      <IntrospectionStateNumber>766</IntrospectionStateNumber>
       <Current>1</Current>
-      <Relations>sequence|table|16404|16406|1
-sequence|table|16416|16418|1
-sequence|table|16442|16444|1
+      <Relations>sequence|table|16684|16686|1
+sequence|table|16697|16699|1
+sequence|table|16712|16714|1
+sequence|table|25122|25124|1
+sequence|table|25143|25145|1
+sequence|table|25085|25087|1
+sequence|table|25106|25108|1
+sequence|table|25114|25116|1
 sequence|table|16468|16470|1
 sequence|table|16498|16500|1
 sequence|table|16513|16515|1
 sequence|table|16530|16532|1
-sequence|table|16684|16686|1
-sequence|table|16697|16699|1
-sequence|table|16712|16714|1
-sequence|table|25085|25087|1
-sequence|table|25106|25108|1
-sequence|table|25114|25116|1
-sequence|table|25122|25124|1
-sequence|table|25143|25145|1
+sequence|table|16404|16406|1
+sequence|table|16416|16418|1
+sequence|table|16442|16444|1
 </Relations>
     </database>
     <role id="5" parent="1" name="pg_execute_server_program">
@@ -183,7 +183,7 @@ sequence|table|25143|25145|1
       <Comment>standard public schema</Comment>
       <StateNumber>276</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>752</IntrospectionStateNumber>
+      <IntrospectionStateNumber>767</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <access-method id="31" parent="4" name="heap">
@@ -318,7 +318,7 @@ sequence|table|25143|25145|1
     <table id="48" parent="30" name="genres">
       <ObjectId>25108</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>717</StateNumber>
+      <StateNumber>759</StateNumber>
     </table>
     <table id="49" parent="30" name="places">
       <ObjectId>25145</ObjectId>
@@ -328,7 +328,7 @@ sequence|table|25143|25145|1
     <table id="50" parent="30" name="repertoire">
       <ObjectId>25116</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>724</StateNumber>
+      <StateNumber>765</StateNumber>
     </table>
     <column id="51" parent="46" name="id">
       <Position>1</Position>
@@ -462,21 +462,27 @@ sequence|table|25143|25145|1
       <StateNumber>717</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="70" parent="48" name="genres_pkey">
+    <column id="70" parent="48" name="film_name">
+      <Position>4</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <StateNumber>759</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="71" parent="48" name="genres_pkey">
       <ObjectId>25112</ObjectId>
       <StateNumber>717</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <key id="71" parent="48" name="genres_pkey">
+    <key id="72" parent="48" name="genres_pkey">
       <ObjectId>25113</ObjectId>
       <StateNumber>717</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>genres_pkey</UnderlyingIndexName>
     </key>
-    <column id="72" parent="49" name="id">
+    <column id="73" parent="49" name="id">
       <Position>1</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
@@ -484,35 +490,35 @@ sequence|table|25143|25145|1
       <DefaultExpression>nextval(&apos;places_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>20</TypeId>
     </column>
-    <column id="73" parent="49" name="number_place">
+    <column id="74" parent="49" name="number_place">
       <Position>2</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>746</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="74" parent="49" name="density">
+    <column id="75" parent="49" name="density">
       <Position>3</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>746</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <index id="75" parent="49" name="places_pkey">
+    <index id="76" parent="49" name="places_pkey">
       <ObjectId>25149</ObjectId>
       <StateNumber>746</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <key id="76" parent="49" name="places_pkey">
+    <key id="77" parent="49" name="places_pkey">
       <ObjectId>25150</ObjectId>
       <StateNumber>746</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>places_pkey</UnderlyingIndexName>
     </key>
-    <column id="77" parent="50" name="id">
+    <column id="78" parent="50" name="id">
       <Position>1</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
@@ -520,42 +526,60 @@ sequence|table|25143|25145|1
       <DefaultExpression>nextval(&apos;repertoire_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>20</TypeId>
     </column>
-    <column id="78" parent="50" name="date">
+    <column id="79" parent="50" name="date">
       <Position>2</Position>
       <DataType>timestamp with time zone|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>724</StateNumber>
       <TypeId>1184</TypeId>
     </column>
-    <column id="79" parent="50" name="beginning">
+    <column id="80" parent="50" name="beginning">
       <Position>3</Position>
       <DataType>timestamp with time zone|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>724</StateNumber>
       <TypeId>1184</TypeId>
     </column>
-    <column id="80" parent="50" name="endtime">
+    <column id="81" parent="50" name="endtime">
       <Position>4</Position>
       <DataType>timestamp with time zone|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>724</StateNumber>
       <TypeId>1184</TypeId>
     </column>
-    <column id="81" parent="50" name="price">
+    <column id="82" parent="50" name="price">
       <Position>5</Position>
       <DataType>double precision|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>724</StateNumber>
       <TypeId>701</TypeId>
     </column>
-    <index id="82" parent="50" name="repertoire_pkey">
+    <column id="83" parent="50" name="runningtime">
+      <Position>6</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>753</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="84" parent="50" name="genre_id">
+      <Position>7</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>762</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="85" parent="50" name="film_name">
+      <Position>8</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <StateNumber>765</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="86" parent="50" name="repertoire_pkey">
       <ObjectId>25120</ObjectId>
       <StateNumber>724</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <key id="83" parent="50" name="repertoire_pkey">
+    <key id="87" parent="50" name="repertoire_pkey">
       <ObjectId>25121</ObjectId>
       <StateNumber>724</StateNumber>
       <ColNames>id</ColNames>

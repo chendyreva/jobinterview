@@ -1,0 +1,12 @@
+1)select am.id,a.id,
+       am.film_name, bm.name, b.runningtime,
+       bm.genre_id from genres a inner join films
+    am on a.id = am.id, repertoire b inner join films
+    bm on b.id = bm.id where a.id < b.id
+   and b.beginning < a.beginning + (am.runningtime::text||'minute')::INTERVAL order by a.beginning;
+
+   2) select * from repertoire
+      join films f on repertoire.film_name = f.film_name
+
+    3) select * from repertoire
+       join films f on repertoire.runningtime = f.runningtime
