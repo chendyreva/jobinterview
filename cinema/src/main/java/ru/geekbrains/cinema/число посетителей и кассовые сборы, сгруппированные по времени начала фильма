@@ -1,0 +1,21 @@
+(SELECT
+     count(*) AS number_of_visitors, sum(ticket_price) AS box_office, '9-15' AS time_interval
+ FROM tickets INNER JOIN repertoire ON tickets.repertoire_id = repertoire.id
+ WHERE date_part('hour', beginning) >= 9 AND date_part('hour', beginning) < 15
+)
+UNION
+(SELECT
+     count(*) AS number_of_visitors, sum(ticket_price) AS box_office, '15-18' AS time_interval
+ FROM tickets INNER JOIN repertoire ON tickets.repertoire_id = repertoire.id
+ WHERE date_part('hour', beginning) >= 15 AND date_part('hour', beginning) < 18
+)
+UNION
+(SELECT
+     count(*) AS number_of_visitors, sum(ticket_price) AS box_office, '18-21' AS time_interval
+ FROM tickets INNER JOIN repertoire ON tickets.repertoire_id = repertoire.id
+ WHERE date_part('hour', beginning) >= 18 AND date_part('hour', beginning) < 21
+);
+Результат:
+2	600,00 ?	18-21
+5	1 500,00 ?	15-18
+10	1 700,00 ?	9-15
