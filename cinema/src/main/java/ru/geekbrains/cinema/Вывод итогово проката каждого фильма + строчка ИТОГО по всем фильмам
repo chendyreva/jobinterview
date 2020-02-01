@@ -1,0 +1,37 @@
+
+(SELECT
+     film_name AS film_name, count(*) AS tickets_sold, sum(ticket_price) AS total_box_office, avg(s.show_tickets) AS average_tickets_per_repertoire
+ FROM
+     tickets
+         INNER JOIN repertoire ON repertoire_id = repertoire.id
+         INNER JOIN films ON film_id = films.id
+         INNER JOIN (
+         SELECT
+             repertoire_id, count(*) AS show_tickets
+         FROM tickets st
+                  INNER JOIN repertoire ss ON st.repertoire_id = ss.id
+         GROUP BY repertoire_id) AS s ON s.repertoire_id = repertoire.id
+ GROUP BY films.id)
+UNION
+(SELECT
+     'Итого', count(*) AS tickets_sold, sum(ticket_price) AS total_box_office, avg(s.show_tickets) AS average_tickets_per_show
+ FROM
+     tickets
+         INNER JOIN repertoire ON repertoire_id = repertoire.id
+         INNER JOIN films ON film_id = films.id
+         INNER JOIN (
+         SELECT
+             repertoire_id, count(*) AS show_tickets
+         FROM tickets st
+                  INNER JOIN repertoire ss ON st.repertoire_id = ss.id
+         GROUP BY repertoire_id) AS s ON s.repertoire_id = repertoire.id
+)
+ORDER BY total_box_office ASC;
+
+Результат:
+
+Холодное сердце	3	600,00 ?	3
+Союз спасения	4	800,00 ?	4
+Марафон желаний	5	900,00 ?	2.6
+Вторжение	5	1 500,00 ?	5
+Итого	17	3 800,00 ?	3.7058823529411765

@@ -1,0 +1,17 @@
+SELECT
+    film_name, a.beginning, runningtime, b.beginning, b.beginning - a.beginning - (runningtime::text||'minute')::INTERVAL AS break
+FROM
+    repertoire a INNER JOIN films ON a.film_id = films.id,
+    repertoire b
+WHERE a.beginning < b.beginning
+  AND b.id IN
+      (SELECT id
+       FROM repertoire c
+       WHERE c.beginning > a.beginning
+       ORDER BY c.beginning - a.beginning asc limit 1)
+  AND b.beginning - a.beginning - (runningtime::text||'minute')::INTERVAL > interval '30 min'
+ORDER BY break;
+
+Холодное сердце	2020-01-25 11:00:00.000000	90	2020-01-25 14:00:00.000000	0 years 0 mons 0 days 1 hours 30 mins 0.00 secs
+
+
