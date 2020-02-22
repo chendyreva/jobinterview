@@ -73,8 +73,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -93,7 +93,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="findjar.last.used.dir" value="$PROJECT_DIR$/lib" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/templates" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -106,20 +106,20 @@
       <recent name="ru.geekbrains.repository" />
       <recent name="ru.geekbrains.entities" />
     </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="ru.geekbrains.listener" />
       <recent name="ru.geekbrains.controller" />
       <recent name="ru.geekbrains.dao" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Анастасия\hw7_entityStudent\src\main\webapp" />
-      <recent name="C:\Users\Анастасия\hw7_entityStudent\src\main\java\ru\geekbrains" />
-      <recent name="C:\Users\Анастасия\hw7_entityStudent\src\main" />
+      <recent name="C:\Users\Анастасия\hw7_entityStudent\src\main\resources\templates" />
       <recent name="C:\Users\Анастасия\hw7_entityStudent\src\main\resources" />
-      <recent name="C:\Users\Анастасия\hw7_entityStudent\lib" />
+      <recent name="C:\Users\Анастасия\hw7_entityStudent\src\main\resources\META-INF" />
+      <recent name="C:\Users\Анастасия\hw7_entityStudent\src\main\java\com\geekbrains" />
+      <recent name="C:\Users\Анастасия\hw7_entityStudent\src\main\webapp" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -144,7 +144,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1581596801643</updated>
-      <workItem from="1581596804765" duration="8163000" />
+      <workItem from="1581596804765" duration="9257000" />
+      <workItem from="1582203807338" duration="3549000" />
     </task>
     <servers />
   </component>

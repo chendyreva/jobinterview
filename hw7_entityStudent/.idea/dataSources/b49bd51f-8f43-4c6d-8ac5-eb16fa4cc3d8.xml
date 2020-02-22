@@ -19,20 +19,20 @@
       <Owner>postgres</Owner>
       <IntrospectionStateNumber>906</IntrospectionStateNumber>
       <Current>1</Current>
-      <Relations>sequence|table|16404|16406|1
+      <Relations>sequence|table|16684|16686|1
+sequence|table|16712|16714|1
+sequence|table|16697|16699|1
+sequence|table|25241|25243|1
+sequence|table|25233|25235|1
+sequence|table|16530|16532|1
+sequence|table|25085|25087|1
+sequence|table|25254|25256|1
+sequence|table|16404|16406|1
 sequence|table|16416|16418|1
 sequence|table|16442|16444|1
 sequence|table|16468|16470|1
 sequence|table|16498|16500|1
 sequence|table|16513|16515|1
-sequence|table|16530|16532|1
-sequence|table|16684|16686|1
-sequence|table|16712|16714|1
-sequence|table|25241|25243|1
-sequence|table|25233|25235|1
-sequence|table|25254|25256|1
-sequence|table|16697|16699|1
-sequence|table|25085|25087|1
 </Relations>
     </database>
     <role id="5" parent="1" name="pg_execute_server_program">
