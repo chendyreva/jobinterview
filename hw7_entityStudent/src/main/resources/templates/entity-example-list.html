@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <table th:if="${entityExamples != null}">
+            <thead th:if="${entityExamples.size() > 0}">
+                <td th:each="entityFieldName: ${entityExamples.get(0).getFieldNames()}">
+                    <span th:text="${entityFieldName}"></span>
+                </td>
+            </thead>
+            <tbody th:if="${entityExamples.size() > 0}">
+                <tr th:each="entityExampleReflection: ${entityExamples}">
+                    <td th:each="entityFieldReflection: ${entityExampleReflection}">
+                        <span th:text="${entityFieldReflection.toString()}"></span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <a th:href="@{/student}">
+            К списку сущностей
+        </a>
+    </body>
+</html>
